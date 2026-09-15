@@ -1,0 +1,8 @@
+.worktrees/
+work/
+.impeccable/mocks/
+.impeccable/questions/
+node_modules/
+dist/
+coverage/
+.DS_Store
