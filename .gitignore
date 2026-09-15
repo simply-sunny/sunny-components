@@ -2,7 +2,11 @@
 work/
 .impeccable/mocks/
 .impeccable/questions/
+.impeccable/review/
 node_modules/
 dist/
 coverage/
 .DS_Store
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
