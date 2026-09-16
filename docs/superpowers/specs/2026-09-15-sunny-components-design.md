@@ -4,7 +4,7 @@
 
 Sunny Components is a source-first React and TypeScript component library with a public documentation gallery. It translates the visual language of Simply Sunny and Silk-S1 into reusable interface primitives while adopting the clear information architecture of the Supabase Design System and Apple’s principles of hierarchy, familiarity, adaptability, and accessibility.
 
-The first release will live in a new public GitHub repository named `sunny-compoenents` and deploy automatically to GitHub Pages. It will not be published to npm.
+The first release will live in a new public GitHub repository named `sunny-components` and deploy automatically to GitHub Pages. It will not be published to npm.
 
 ## Goals
 
@@ -35,7 +35,7 @@ The primary flow is:
 
 ## Technical Architecture
 
-Use Vite, React, and TypeScript as a static application. Configure Vite’s base path for `/sunny-compoenents/` so assets and routes resolve on GitHub Pages.
+Use Vite, React, and TypeScript as a static application. Configure Vite’s base path for `/sunny-components/` so assets and routes resolve on GitHub Pages.
 
 Keep four concerns separate:
 
@@ -195,7 +195,7 @@ Target WCAG 2.2 AA fundamentals:
 ## Repository and Deployment
 
 - Initialize a Git repository with `main` as the default branch.
-- Create the public GitHub repository `sunny-compoenents` under the authenticated account.
+- Create the public GitHub repository `sunny-components` under the authenticated account.
 - Include a concise README describing purpose, local development, copying components, and deployment.
 - Add a GitHub Actions workflow that builds the Vite site and deploys the static output to GitHub Pages.
 - Configure Pages to use GitHub Actions.

@@ -32,7 +32,7 @@ Components are browsed in a public documentation gallery, previewed in represent
 - User-facing component gallery with live previews, variants, usage snippets, props guidance, and accessibility notes.
 - Searchable navigation, responsive layouts, and light and dark themes.
 - Initial scope covers foundations, actions, inputs, display, feedback, navigation, and overlays.
-- Repository name is `sunny-compoenents`, preserving the spelling requested by the user.
+- Repository name is `sunny-components`.
 - Deployment target is GitHub Pages.
 
 ## Brand Commitments
