@@ -595,7 +595,7 @@ function Header({ openMenu }: { openMenu: () => void }) {
         <a
           className="sc-icon-button"
           aria-label="View GitHub repository"
-          href="https://github.com/simply-sunny/sunny-compoenents"
+          href="https://github.com/simply-sunny/sunny-components"
         >
           <Code2 size={17} />
         </a>
@@ -700,7 +700,7 @@ function ComponentPage({ doc }: { doc: Doc }) {
         </div>
         <a
           className="text-link"
-          href="https://github.com/simply-sunny/sunny-compoenents/blob/main/src/components/index.tsx"
+          href="https://github.com/simply-sunny/sunny-components/blob/main/src/components/index.tsx"
         >
           View source <ArrowUpRight size={15} />
         </a>

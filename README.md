@@ -10,7 +10,7 @@
 </p>
 
 <p align="left">
-  <a href="https://simply-sunny.github.io/sunny-compoenents/"><img src="https://img.shields.io/badge/gallery-GitHub_Pages-black?style=flat-square&logo=github" alt="Gallery"></a>
+  <a href="https://simply-sunny.github.io/sunny-components/"><img src="https://img.shields.io/badge/gallery-GitHub_Pages-black?style=flat-square&logo=github" alt="Gallery"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-black?style=flat-square" alt="MIT License"></a>
   <a href="LICENSE-ASSETS.md"><img src="https://img.shields.io/badge/icon-CC_BY_4.0-black?style=flat-square" alt="CC BY 4.0 icon license"></a>
   <img src="https://img.shields.io/badge/components-19-black?style=flat-square" alt="19 components">
@@ -31,8 +31,8 @@
 ### Quickstart
 
 ```bash
-git clone https://github.com/simply-sunny/sunny-compoenents.git
-cd sunny-compoenents
+git clone https://github.com/simply-sunny/sunny-components.git
+cd sunny-components
 npm install
 npm run dev
 ```
@@ -85,7 +85,7 @@ Semantic tokens cover color, typography, spacing, radius, borders, shadows, focu
 ### Project Structure
 
 ```text
-sunny-compoenents/
+sunny-components/
 ├── src/
 │   ├── components/       # Portable React source and component styles
 │   ├── styles/           # Semantic tokens and gallery layout

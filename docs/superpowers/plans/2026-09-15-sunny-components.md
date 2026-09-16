@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- Repository and Vite base path: `sunny-compoenents` and `/sunny-compoenents/`.
+- Repository and Vite base path: `sunny-components` and `/sunny-components/`.
 - Source library only; no npm publication.
 - Familiar documentation layout, near-black default theme, restrained icy-blue accent.
 - Preserve the subtle grid, fine borders, technical typography, precise spacing, and quiet motion of Simply Sunny and Silk-S1.
@@ -66,7 +66,7 @@ npm install react react-dom @radix-ui/react-dialog @radix-ui/react-tooltip lucid
 npm install -D typescript vite @vitejs/plugin-react vitest jsdom @testing-library/react @testing-library/user-event @testing-library/jest-dom jest-axe @types/react @types/react-dom @types/jest-axe
 ```
 
-Configure scripts `dev`, `build`, `test`, and `test:run`; set Vite `base: '/sunny-compoenents/'`, React, jsdom, and `src/test/setup.ts`.
+Configure scripts `dev`, `build`, `test`, and `test:run`; set Vite `base: '/sunny-components/'`, React, jsdom, and `src/test/setup.ts`.
 
 - [ ] **Step 3: Verify the test fails**
 
@@ -262,7 +262,7 @@ git commit -m "feat: build searchable component gallery"
 ```ts
 it('uses the Pages repository base', async () => {
   const config = await import('../vite.config')
-  expect(config.default.base).toBe('/sunny-compoenents/')
+  expect(config.default.base).toBe('/sunny-components/')
 })
 ```
 
@@ -327,7 +327,7 @@ git commit -m "refactor: polish and document component system"
 
 **Interfaces:**
 - Consumes: clean local `main` and authenticated GitHub CLI.
-- Produces: public `simply-sunny/sunny-compoenents` repository and live Pages site.
+- Produces: public `simply-sunny/sunny-components` repository and live Pages site.
 
 - [ ] **Step 1: Verify local and GitHub state**
 
@@ -341,7 +341,7 @@ Expected: `main`, no unintended changes, and authenticated GitHub access.
 - [ ] **Step 2: Create and push the repository**
 
 ```bash
-gh repo create sunny-compoenents --public --source=. --remote=origin --push
+gh repo create sunny-components --public --source=. --remote=origin --push
 ```
 
 Expected: `main` tracks `origin/main`.
@@ -352,7 +352,7 @@ Use `gh run watch` on the Pages workflow. If Pages requires initial configuratio
 
 - [ ] **Step 4: Verify the public experience**
 
-Open `https://simply-sunny.github.io/sunny-compoenents/` and verify home, search, theme switch, one component route, copy feedback, desktop layout, mobile layout, and no blocking console errors.
+Open `https://simply-sunny.github.io/sunny-components/` and verify home, search, theme switch, one component route, copy feedback, desktop layout, mobile layout, and no blocking console errors.
 
 - [ ] **Step 5: Report delivery**
 
