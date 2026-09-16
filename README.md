@@ -98,7 +98,7 @@ sunny-compoenents/
 
 ### Related Projects
 
-- [Silk-S1](https://github.com/simply-sunny/silk-s1) — prosody-aware speech emotion architecture on Apple Silicon.
+- [Silk-S1](https://simply-sunny.github.io/silk-s1/) — live documentation for the prosody-aware speech emotion architecture on Apple Silicon.
 - [Find My Items](https://github.com/simply-sunny/find-my-items) — indexed container search and retrieval for Minecraft.
 - [Footsteps](https://github.com/simply-sunny/footsteps) — days represented as navigable trajectories.
 - [Cue My Music](https://github.com/simply-sunny/cue-my-music) — deterministic music-transition tooling.
