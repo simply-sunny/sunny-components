@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import {
   Alert,
+  AnimatedNumber,
   Badge,
   Breadcrumbs,
   Button,
@@ -30,6 +31,7 @@ import {
   Tooltip,
 } from "./components";
 import { componentHref, parseHash } from "./lib/route";
+import { NumberDemo } from "./NumberDemo";
 
 type Doc = {
   slug: string;
@@ -209,17 +211,20 @@ const docs: Doc[] = [
     notes: ["Avoid nested cards.", "Use spacing before adding more borders."],
   },
   {
+    slug: "animated-number",
+    name: "Animated Number",
+    category: "Display",
+    summary: "Digits roll up on increase and down on decrease. Unchanged digits stay still.",
+    demo: <NumberDemo />,
+    usage: `<AnimatedNumber value={latency} decimals={1} suffix=" ms" />`,
+    notes: ["Screen readers receive one complete value, not individual digits.", "System reduced-motion preferences always take priority."],
+  },
+  {
     slug: "metric-card",
     name: "Metric Card",
     category: "Display",
     summary: "Tabular performance data with supporting context.",
-    demo: (
-      <MetricCard
-        label="Median latency"
-        value="150 ms"
-        note="End-to-end · M2 Max"
-      />
-    ),
+    demo: <NumberDemo />,
     usage: `<MetricCard label="Median latency" value="150 ms" note="End-to-end" />`,
     notes: ["Always include measurement context."],
   },
@@ -623,7 +628,7 @@ function Home() {
       </section>
       <section className="showcase" aria-label="Component preview">
         <div className="showcase-meta">
-          <span>LIVE SYSTEM / 25 ENTRIES</span>
+          <span>LIVE SYSTEM / {docs.length} ENTRIES</span>
           <span>ICE BLUE / DARK</span>
         </div>
         <div className="showcase-grid">
@@ -637,7 +642,7 @@ function Home() {
           </div>
           <MetricCard
             label="Median latency"
-            value="150 ms"
+            value={<AnimatedNumber value={150} suffix=" ms" />}
             note="End-to-end · Apple Silicon"
           />
           <Card className="status-card">
@@ -700,7 +705,7 @@ function ComponentPage({ doc }: { doc: Doc }) {
         </div>
         <a
           className="text-link"
-          href="https://github.com/simply-sunny/sunny-components/blob/main/src/components/index.tsx"
+          href={`https://github.com/simply-sunny/sunny-components/blob/main/src/components/${doc.slug === "animated-number" ? "AnimatedNumber.tsx" : "index.tsx"}`}
         >
           View source <ArrowUpRight size={15} />
         </a>
@@ -726,7 +731,7 @@ function ComponentPage({ doc }: { doc: Doc }) {
         <div>
           <h2>Typed props</h2>
           <CodeBlock
-            code={`${componentName}Props extends native element props\nclassName?: string\nref?: React.Ref<HTMLElement>`}
+            code={doc.slug === "animated-number" ? 'value: number\ndecimals?: number // default 0\nsuffix?: string // default ""' : `${componentName}Props extends native element props\nclassName?: string\nref?: React.Ref<HTMLElement>`}
           />
         </div>
       </section>
@@ -745,7 +750,7 @@ function ComponentPage({ doc }: { doc: Doc }) {
           </li>
         </ul>
         <p className="source-path">
-          Source: <code>src/components/index.tsx</code>
+          Source: <code>src/components/{doc.slug === "animated-number" ? "AnimatedNumber.tsx" : "index.tsx"}</code>
         </p>
       </section>
     </main>

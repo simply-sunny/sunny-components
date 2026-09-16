@@ -13,7 +13,7 @@
   <a href="https://simply-sunny.github.io/sunny-components/"><img src="https://img.shields.io/badge/gallery-GitHub_Pages-black?style=flat-square&logo=github" alt="Gallery"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-black?style=flat-square" alt="MIT License"></a>
   <a href="LICENSE-ASSETS.md"><img src="https://img.shields.io/badge/icon-CC_BY_4.0-black?style=flat-square" alt="CC BY 4.0 icon license"></a>
-  <img src="https://img.shields.io/badge/components-19-black?style=flat-square" alt="19 components">
+  <img src="https://img.shields.io/badge/components-20-black?style=flat-square" alt="20 components">
 </p>
 
 ---
@@ -21,7 +21,7 @@
 ### Highlights
 
 - **Source-first**: copy components directly into a project; no package registry or release tooling required.
-- **Twenty-five documented entries**: 19 components plus color, typography, spacing, radius, borders/shadows, and motion foundations.
+- **Twenty-six documented entries**: 20 components plus color, typography, spacing, radius, borders/shadows, and motion foundations.
 - **Accessible by contract**: keyboard navigation, visible focus, semantic HTML, reduced motion, and light/dark contrast.
 - **Technical visual language**: near-black surfaces, an icy-blue accent, fine borders, and the construction grid shared by [Simply Sunny](https://simply-sunny.github.io/) and [Silk-S1](https://simply-sunny.github.io/silk-s1/).
 - **Public gallery**: searchable navigation, live states, usage snippets, typed-prop guidance, and responsive layouts.
@@ -71,10 +71,26 @@ export function ExperimentForm() {
 | ---------- | ------------------------------------ |
 | Actions    | Button, Icon Button, Link            |
 | Inputs     | Input, Textarea, Checkbox, Switch    |
-| Display    | Badge, Card, Metric Card, Code Block |
+| Display    | Badge, Card, Metric Card, Animated Number, Code Block |
 | Feedback   | Alert, Progress, Skeleton            |
 | Navigation | Tabs, Breadcrumbs, Top Navigation    |
 | Overlays   | Dialog, Tooltip                      |
+
+### Animated Numbers
+
+```tsx
+import { AnimatedNumber, MetricCard } from "./components";
+
+<MetricCard
+  label="Latency"
+  value={<AnimatedNumber value={latency} decimals={1} suffix=" ms" />}
+  note="Simulated ping"
+/>
+```
+
+Digits roll up on increase and down on decrease, including carries such as 9 → 10. Inspired by the Dynamic Island volume readout in [vorssaint-utils](https://github.com/vorssaint/vorssaint-utils). The [playground](https://simply-sunny.github.io/sunny-components/#/components/animated-number) includes value, duration, and travel sliders, replay, and reduced motion.
+
+Copy `AnimatedNumber.tsx` and its imported `AnimatedNumber.css`, plus the `.sr-only` utility from `components.css`. Override `--motion-duration` (default `140ms`) and `--motion-distance` (default `100%`) on a parent to tune the effect. Screen readers receive one complete value; system reduced-motion preferences disable the roll.
 
 ### Foundations
 

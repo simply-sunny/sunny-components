@@ -1,0 +1,24 @@
+.animated-number {
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  white-space: pre;
+  vertical-align: bottom;
+}
+.number-glyphs { display: inline-flex; }
+.number-slot { display: inline-grid; overflow: hidden; line-height: 1.2; min-width: .35em; }
+.number-slot > span { grid-area: 1 / 1; }
+.number-old { animation: number-out-up var(--motion-duration, 140ms) var(--motion-ease) both; }
+.number-new { animation: number-in-up var(--motion-duration, 140ms) var(--motion-ease) both; }
+[data-direction="down"] .number-old { animation-name: number-out-down; }
+[data-direction="down"] .number-new { animation-name: number-in-down; }
+@keyframes number-in-up { from { transform: translateY(var(--motion-distance, 100%)); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes number-out-up { from { transform: translateY(0); opacity: 1; } to { transform: translateY(calc(-1 * var(--motion-distance, 100%))); opacity: 0; } }
+@keyframes number-in-down { from { transform: translateY(calc(-1 * var(--motion-distance, 100%))); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes number-out-down { from { transform: translateY(0); opacity: 1; } to { transform: translateY(var(--motion-distance, 100%)); opacity: 0; } }
+[data-reduced-motion="true"] .number-old { display: none; }
+[data-reduced-motion="true"] .number-new { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .number-old { display: none; }
+  .number-new { animation: none; }
+}

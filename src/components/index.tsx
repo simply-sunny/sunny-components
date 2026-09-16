@@ -14,6 +14,8 @@ import {
   type TextareaHTMLAttributes,
 } from "react";
 import { cn } from "../lib/cn";
+import { AnimatedNumber } from "./AnimatedNumber";
+export { AnimatedNumber } from "./AnimatedNumber";
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "ghost" | "danger";
@@ -168,7 +170,7 @@ export function MetricCard({
   note,
 }: {
   label: string;
-  value: string;
+  value: ReactNode;
   note: string;
 }) {
   return (
@@ -200,7 +202,7 @@ export function Progress({ value, label }: { value: number; label: string }) {
     <div className="sc-progress-wrap">
       <div>
         <span>{label}</span>
-        <span>{value}%</span>
+        <span><AnimatedNumber value={value} suffix="%" /></span>
       </div>
       <div
         className="sc-progress"
