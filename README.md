@@ -23,7 +23,7 @@
 - **Install or copy**: use the npm package, or copy the source kit with the bundled CLI.
 - **Twenty-six documented entries**: 20 components plus color, typography, spacing, radius, borders/shadows, and motion foundations.
 - **Accessible by contract**: keyboard navigation, visible focus, semantic HTML, reduced motion, and light/dark contrast.
-- **Technical visual language**: near-black surfaces, an icy-blue accent, fine borders, and the construction grid shared by [Simply Sunny](https://simply-sunny.github.io/) and [Silk-S1](https://simply-sunny.github.io/silk-s1/).
+- **Technical visual language**: near-black surfaces, an icy-blue accent, fine borders, and the construction grid.
 - **Public gallery**: searchable navigation, live states, usage snippets, typed-prop guidance, and responsive layouts.
 
 ---
