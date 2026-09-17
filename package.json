@@ -1,24 +1,59 @@
 {
   "name": "sunny-components",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
+  "description": "Source-first React components, rolling numbers, and a source-copy CLI.",
   "type": "commonjs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simply-sunny/sunny-components.git"
+  },
+  "homepage": "https://simply-sunny.github.io/sunny-components/",
+  "engines": { "node": ">=22.12.0" },
+  "publishConfig": { "access": "public" },
+  "main": "./package-dist/index.cjs",
+  "module": "./package-dist/index.mjs",
+  "types": "./package-dist/types/library.d.ts",
+  "exports": {
+    ".": {
+      "types": "./package-dist/types/library.d.ts",
+      "import": "./package-dist/index.mjs",
+      "require": "./package-dist/index.cjs"
+    },
+    "./styles.css": { "types": "./src/styles/css.d.ts", "default": "./package-dist/styles.css" },
+    "./tokens.css": { "types": "./src/styles/css.d.ts", "default": "./src/styles/tokens.css" },
+    "./package.json": "./package.json"
+  },
+  "bin": { "sunny-components": "./bin/sunny-components.cjs" },
+  "sideEffects": ["**/*.css"],
+  "files": [
+    "package-dist/", "bin/", "LICENSE",
+    "src/components/index.tsx", "src/components/AnimatedNumber.tsx",
+    "src/components/components.css", "src/components/AnimatedNumber.css",
+    "src/lib/cn.ts", "src/styles/tokens.css", "src/styles/css.d.ts"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "build:package": "vite build --config vite.package.config.mts && tsc -p tsconfig.package.json",
+    "prepack": "npm run build:package",
+    "test:package": "node scripts/test-package.cjs"
   },
   "keywords": [],
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",
     "@radix-ui/react-tooltip": "^1.2.16",
-    "lucide-react": "^1.46.0",
-    "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "lucide-react": "^1.46.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.3",
     "@testing-library/user-event": "^14.6.7",

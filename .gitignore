@@ -5,6 +5,9 @@ work/
 .impeccable/review/
 node_modules/
 dist/
+package-dist/
+*.tgz
+test-results/
 coverage/
 .DS_Store
 *.tsbuildinfo

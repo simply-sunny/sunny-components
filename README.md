@@ -20,13 +20,42 @@
 
 ### Highlights
 
-- **Source-first**: copy components directly into a project; no package registry or release tooling required.
+- **Install or copy**: use the npm package, or copy the source kit with the bundled CLI.
 - **Twenty-six documented entries**: 20 components plus color, typography, spacing, radius, borders/shadows, and motion foundations.
 - **Accessible by contract**: keyboard navigation, visible focus, semantic HTML, reduced motion, and light/dark contrast.
 - **Technical visual language**: near-black surfaces, an icy-blue accent, fine borders, and the construction grid shared by [Simply Sunny](https://simply-sunny.github.io/) and [Silk-S1](https://simply-sunny.github.io/silk-s1/).
 - **Public gallery**: searchable navigation, live states, usage snippets, typed-prop guidance, and responsive layouts.
 
 ---
+
+### npm Package & CLI
+
+The package is prepared for publication but **not published to npm yet**. For now, build a local tarball:
+
+```bash
+npm ci
+npm pack                     # builds sunny-components-1.0.0.tgz
+# From your React 19 app:
+npm install /path/to/sunny-components-1.0.0.tgz
+```
+
+```tsx
+import { Button, AnimatedNumber } from 'sunny-components';
+import 'sunny-components/styles.css'; // import once, in your app entry
+
+<Button>Save</Button>
+<AnimatedNumber value={latency} decimals={1} suffix=" ms" />
+```
+
+Includes ESM and CommonJS entry points, TypeScript declarations, and an explicit stylesheet export. React and React DOM are peer dependencies; Radix and Lucide are installed dependencies. Gallery layout styles are excluded. The tokens stylesheet currently loads DM Sans and IBM Plex Mono from Google Fonts; override `--font-sans` / `--font-mono` and self-host fonts when required by your app's privacy or CSP policy.
+
+To own the source instead (after installing the tarball, or after publication):
+
+```bash
+npx --no-install sunny-components init src/sunny
+```
+
+The CLI copies the shared component kit, styles, class-name helper, and MIT license. It refuses existing directories, never edits your app's configuration, and prints required dependency/style imports. There is no remote code download or custom registry. Individual-component installation can be added once the shared source module is split.
 
 ### Quickstart
 
@@ -118,6 +147,27 @@ sunny-components/
 - [Find My Items](https://github.com/simply-sunny/find-my-items) — indexed container search and retrieval for Minecraft.
 - [Footsteps](https://github.com/simply-sunny/footsteps) — days represented as navigable trajectories.
 - [Cue My Music](https://github.com/simply-sunny/cue-my-music) — deterministic music-transition tooling.
+
+### Package Verification & Publishing
+
+```bash
+npm run test:run             # component tests
+npm run build               # GitHub Pages gallery
+npm run test:package        # pack, install into a temp app, verify imports/types/CSS/CLI
+```
+
+The package test requires registry access. Node 22.12+ is required for the repository tooling and CLI.
+
+Publishing is manual and requires an npm account with permission to the package name:
+
+```bash
+npm login
+npm whoami
+npm publish --dry-run
+npm publish --access public
+```
+
+`sunny-components` has an unpublished-name history on npm; ownership/availability has not been verified. If needed, set an owned scoped name (`npm pkg set name=@YOUR_SCOPE/sunny-components`) before publishing and update import examples accordingly. `prepack` rebuilds package artifacts on every pack/publish. The gallery's existing Pages deployment is unchanged; it does not publish npm releases.
 
 ### License & Credits
 
