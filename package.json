@@ -8,7 +8,6 @@
     "type": "git",
     "url": "https://github.com/simply-sunny/sunny-components.git"
   },
-  "homepage": "https://simply-sunny.github.io/sunny-components/",
   "engines": { "node": ">=22.12.0" },
   "publishConfig": { "access": "public" },
   "main": "./package-dist/index.cjs",
@@ -33,8 +32,6 @@
     "src/lib/cn.ts", "src/styles/tokens.css", "src/styles/css.d.ts"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
     "test": "vitest",
     "test:run": "vitest run",
     "build:package": "vite build --config vite.package.config.mts && tsc -p tsconfig.package.json",
