@@ -2,9 +2,9 @@
   <img src="favicon.svg" width="112" height="112" alt="Sunny Components half-sun icon" />
 </p>
 
-# Sunny Components
+<h1 align="center">Sunny Components</h1>
 
-<p align="left">
+<p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-black?style=flat-square" alt="MIT License"></a>
   <a href="LICENSE-ASSETS.md"><img src="https://img.shields.io/badge/icon-CC_BY_4.0-black?style=flat-square" alt="CC BY 4.0 icon license"></a>
   <img src="https://img.shields.io/badge/components-20-black?style=flat-square" alt="20 components">
